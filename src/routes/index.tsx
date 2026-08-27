@@ -202,7 +202,6 @@ function CelebrationApp() {
       )}
       <HeroVideo />
       <WelcomeMessageSection onOpenLightbox={(idx) => setLightboxIndex(idx)} />
-      <EventHighlights />
       <CountdownSection />
       <Gallery onOpenLightbox={(idx) => setLightboxIndex(idx)} />
       <Venue onOpenLightbox={() => setLightboxIndex(1)} />
@@ -500,62 +499,7 @@ function WelcomeMessageSection({ onOpenLightbox }: { onOpenLightbox: (index: num
   );
 }
 
-const highlightItems = [
-  {
-    title: "Holy Baptism Ceremony",
-    subtitle: "St George Cathedral Church, Kothamangalam",
-    body: "Welcoming our darling Nathania Justin into God's holy family with solemn prayers, blessings, and praise.",
-    time: "9:00 AM",
-  },
-  {
-    title: "Housewarming & Prayer",
-    subtitle: "At Our New Home",
-    body: "Step into our new home as we dedicate it with prayers, gratitude, and warm welcoming hearts.",
-    time: "11:00 AM",
-  },
-  {
-    title: "Festive Feast & Fellowship",
-    subtitle: "Grand Lunch & Celebrations",
-    body: "Join us for a joyful celebratory feast surrounded by loved ones, laughter, and lifelong memories.",
-    time: "12:30 PM",
-  },
-] as const;
 
-function EventHighlights() {
-  return (
-    <section id="highlights" className="relative bg-secondary py-24">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="text-center">
-          <Ornament label="Double Blessings" />
-          <h2 className="font-display text-4xl sm:text-6xl text-primary">The Double Celebration</h2>
-          <p className="mx-auto mt-4 max-w-xl font-body text-lg italic text-foreground/75">
-            Two sacred milestones brought together on one unforgettable Saturday morning.
-          </p>
-        </div>
-
-        <div className="relative mx-auto mt-16 max-w-4xl grid gap-8 md:grid-cols-3">
-          {highlightItems.map((item) => (
-            <article
-              key={item.title}
-              className="rounded-sm border border-primary/20 bg-ivory p-8 text-center shadow-[var(--shadow-soft)] transition duration-300 hover:-translate-y-1 hover:border-primary/50"
-            >
-              <p className="font-sans-ui text-xs font-bold uppercase tracking-[0.3em] text-primary">
-                {item.time}
-              </p>
-              <h3 className="mt-4 font-display text-2xl text-primary font-semibold">{item.title}</h3>
-              <p className="mt-1 font-sans-ui text-[11px] uppercase tracking-widest text-primary/75">
-                {item.subtitle}
-              </p>
-              <p className="mt-4 font-body text-base italic leading-relaxed text-foreground/75">
-                {item.body}
-              </p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function EventCalendar() {
   const daysOfWeek = ["S", "M", "T", "W", "T", "F", "S"];
