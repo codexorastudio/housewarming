@@ -754,7 +754,7 @@ function Footer() {
           <img
             src="/images/grandpix-logo.png"
             alt="GRANDPIX Logo"
-            className="h-24 sm:h-32 max-w-[300px] sm:max-w-[380px] w-auto object-contain drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)] transition duration-300 group-hover:brightness-110"
+            className="h-32 sm:h-44 md:h-52 max-w-[360px] sm:max-w-[480px] w-auto object-contain transition duration-300 group-hover:scale-105"
           />
           <span className="font-sans-ui text-[11px] sm:text-xs uppercase tracking-[0.25em] text-sand/90 group-hover:text-sand border-b border-sand/40 pb-0.5 transition-colors">
             Contact on WhatsApp →
