@@ -21,7 +21,13 @@ export const Route = createFileRoute("/")({
         content: "Join us as we celebrate these two beautiful blessings on Saturday, 12 September 2026 at St George Cathedral Church, Kothamangalam.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://nathaniajustin.vercel.app/images/og-preview.jpg" },
+      { property: "og:image:secure_url", content: "https://nathaniajustin.vercel.app/images/og-preview.jpg" },
+      { property: "og:image:type", content: "image/jpeg" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Baptism of Nathania Justin & Housewarming of Our New Home" },
+      { name: "twitter:description", content: "Join us as we celebrate these two beautiful blessings on Saturday, 12 September 2026 at St George Cathedral Church, Kothamangalam." },
+      { name: "twitter:image", content: "https://nathaniajustin.vercel.app/images/og-preview.jpg" },
     ],
     links: [
       {
