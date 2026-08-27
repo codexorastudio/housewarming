@@ -198,7 +198,6 @@ function CelebrationApp() {
       <WelcomeMessageSection onOpenLightbox={(idx) => setLightboxIndex(idx)} />
       <EventHighlights />
       <CountdownSection />
-      <Schedule />
       <Gallery onOpenLightbox={(idx) => setLightboxIndex(idx)} />
       <Venue onOpenLightbox={() => setLightboxIndex(1)} />
       <DressCode />
@@ -644,43 +643,7 @@ function CountdownSection() {
   );
 }
 
-const schedule = [
-  { time: "9:00 AM", title: "Holy Baptism Service", note: "St George Cathedral Church, Kothamangalam" },
-  { time: "11:00 AM", title: "Grahaprevesham & Housewarming", note: "Welcome prayer at Our New Home" },
-  { time: "12:30 PM", title: "Festive Lunch", note: "A grand feast for our loved ones" },
-  { time: "2:00 PM", title: "Celebration & Fellowship", note: "Photos, laughter & togetherness" },
-];
 
-function Schedule() {
-  return (
-    <section id="schedule" className="bg-background py-24">
-      <div className="mx-auto max-w-5xl px-6 text-center">
-        <Ornament label="The Programme" />
-        <h2 className="font-display text-5xl text-primary sm:text-6xl">Order of Events</h2>
-        <p className="mx-auto mt-4 max-w-md font-body italic text-foreground/75">
-          Details for Saturday, 12th of September 2026.
-        </p>
-      </div>
-
-      <div className="mx-auto mt-16 grid max-w-4xl gap-6 px-6 sm:grid-cols-2">
-        {schedule.map((s) => (
-          <article
-            key={s.time}
-            className="group relative overflow-hidden rounded-sm border border-primary/20 bg-ivory p-8 text-center shadow-[var(--shadow-soft)] transition hover:-translate-y-1 hover:border-primary/50"
-          >
-            <span className="absolute inset-x-6 top-0 h-px bg-primary/40" />
-            <p className="font-sans-ui text-xs font-bold uppercase tracking-[0.4em] text-primary/70">
-              {s.time}
-            </p>
-            <h3 className="mt-3 font-display text-2xl text-primary font-semibold">{s.title}</h3>
-            <p className="mt-2 font-body italic text-foreground/75">{s.note}</p>
-            <span className="absolute inset-x-6 bottom-0 h-px bg-primary/20" />
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-}
 
 function Gallery({ onOpenLightbox }: { onOpenLightbox: (index: number) => void }) {
   return (
