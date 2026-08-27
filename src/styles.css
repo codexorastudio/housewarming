@@ -1,0 +1,200 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Heritage Wedding — Noah & Emma
+ * Wine Red #7F011F + Light Sand #F5EBD0
+ * Serif display (Cormorant Garamond) + refined body (Cormorant / Inter)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-wine: var(--wine);
+  --color-wine-deep: var(--wine-deep);
+  --color-sand: var(--sand);
+  --color-sand-deep: var(--sand-deep);
+  --color-ivory: var(--ivory);
+  --color-gold: var(--gold);
+
+  --font-display: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-script: "Pinyon Script", "Great Vibes", cursive;
+  --font-body: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-soft: 0 20px 60px -30px oklch(0.25 0.08 20 / 0.35);
+  --shadow-frame: 0 30px 80px -40px oklch(0.2 0.1 20 / 0.5);
+}
+
+:root {
+  --radius: 0.25rem;
+
+  /* Palette — wine red + sand */
+  --wine: oklch(0.36 0.14 22);         /* #7F011F */
+  --wine-deep: oklch(0.24 0.12 22);
+  --sand: oklch(0.94 0.04 85);          /* #F5EBD0 */
+  --sand-deep: oklch(0.88 0.05 82);
+  --ivory: oklch(0.98 0.015 85);
+  --gold: oklch(0.72 0.11 78);
+
+  --background: var(--sand);
+  --foreground: oklch(0.22 0.05 25);
+
+  --card: var(--ivory);
+  --card-foreground: var(--foreground);
+  --popover: var(--ivory);
+  --popover-foreground: var(--foreground);
+
+  --primary: var(--wine);
+  --primary-foreground: var(--ivory);
+  --secondary: var(--sand-deep);
+  --secondary-foreground: var(--wine-deep);
+
+  --muted: oklch(0.9 0.03 82);
+  --muted-foreground: oklch(0.4 0.03 25);
+  --accent: var(--gold);
+  --accent-foreground: var(--wine-deep);
+
+  --destructive: oklch(0.55 0.22 28);
+  --destructive-foreground: var(--ivory);
+
+  --border: oklch(0.82 0.04 60 / 0.6);
+  --input: oklch(0.85 0.04 60 / 0.7);
+  --ring: var(--wine);
+
+  --gradient-hero: linear-gradient(180deg,
+    oklch(0.22 0.05 25 / 0) 0%,
+    oklch(0.22 0.05 25 / 0.35) 55%,
+    oklch(0.22 0.05 25 / 0.85) 100%);
+  --gradient-frame: linear-gradient(135deg, var(--sand) 0%, var(--ivory) 100%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    font-feature-settings: "liga", "kern";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+}
+
+@utility font-script {
+  font-family: var(--font-script);
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+}
+
+@utility font-sans-ui {
+  font-family: var(--font-sans);
+}
+
+@utility ornament-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--wine);
+}
+@utility ornament-line {
+  display: block;
+  height: 1px;
+  width: 4rem;
+  background: linear-gradient(90deg, transparent, var(--wine), transparent);
+}
+
+/* Ken Burns slow zoom for hero image */
+@keyframes ken-burns {
+  0% { transform: scale(1.05); }
+  100% { transform: scale(1.18); }
+}
+@utility animate-ken-burns {
+  animation: ken-burns 20s ease-in-out infinite alternate;
+}
+
+/* Falling petals */
+@keyframes petal-fall {
+  0% { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.9; }
+  100% { transform: translateY(110vh) translateX(30px) rotate(360deg); opacity: 0; }
+}
+@utility animate-petal {
+  animation: petal-fall linear infinite;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@utility animate-fade-up {
+  animation: fade-up 1s ease-out both;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+@utility animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes ring-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.08); opacity: 0.15; }
+}
+@utility animate-ring {
+  animation: ring-pulse 3s ease-in-out infinite;
+}
+
+@keyframes soundbar {
+  0% { height: 4px; }
+  100% { height: 16px; }
+}
+
+@media (min-width: 768px) {
+  #intro-screen {
+    display: none !important;
+  }
+}
