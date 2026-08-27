@@ -748,15 +748,15 @@ function Footer() {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="group inline-flex flex-col items-center gap-2 transition-transform duration-300 hover:scale-105 cursor-pointer"
+          className="group inline-flex flex-col items-center gap-3 transition-transform duration-300 hover:scale-105 cursor-pointer py-2 px-4"
           title="Contact Grandpix on WhatsApp to build your website"
         >
           <img
             src="/images/grandpix-logo.png"
             alt="GRANDPIX Logo"
-            className="h-12 sm:h-14 w-auto object-contain drop-shadow-md transition duration-300 group-hover:brightness-110"
+            className="h-24 sm:h-32 max-w-[300px] sm:max-w-[380px] w-auto object-contain drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)] transition duration-300 group-hover:brightness-110"
           />
-          <span className="font-sans-ui text-[11px] uppercase tracking-[0.25em] text-sand/90 group-hover:text-sand border-b border-sand/40 pb-0.5 transition-colors">
+          <span className="font-sans-ui text-[11px] sm:text-xs uppercase tracking-[0.25em] text-sand/90 group-hover:text-sand border-b border-sand/40 pb-0.5 transition-colors">
             Contact on WhatsApp →
           </span>
         </a>
