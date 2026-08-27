@@ -713,8 +713,14 @@ function VenueCard({
 
 
 function Footer() {
+  const whatsappUrl =
+    "https://wa.me/919747647421?text=" +
+    encodeURIComponent(
+      "Hi! I loved this website design and would like to create one like this."
+    );
+
   return (
-    <footer className="bg-primary py-16 text-center text-primary-foreground">
+    <footer className="bg-primary py-16 text-center text-primary-foreground border-t border-sand/20">
       <p className="font-display text-3xl uppercase tracking-widest text-sand">
         Baptism &amp; Housewarming
       </p>
@@ -732,6 +738,29 @@ function Footer() {
       <p className="mt-6 font-script text-2xl sm:text-3xl text-sand/90 px-4 max-w-xl mx-auto">
         "Your love, blessings and presence will make this day even more special."
       </p>
+
+      {/* GRANDPIX Branding & WhatsApp Direct Inquiry Link */}
+      <div className="mt-14 pt-8 border-t border-sand/15 flex flex-col items-center justify-center">
+        <p className="font-sans-ui text-[10px] uppercase tracking-[0.35em] text-sand/70 mb-3">
+          Designed &amp; Crafted by
+        </p>
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group inline-flex flex-col items-center gap-2 transition-transform duration-300 hover:scale-105 cursor-pointer"
+          title="Contact Grandpix on WhatsApp to build your website"
+        >
+          <img
+            src="/images/grandpix-logo.png"
+            alt="GRANDPIX Logo"
+            className="h-12 sm:h-14 w-auto object-contain drop-shadow-md transition duration-300 group-hover:brightness-110"
+          />
+          <span className="font-sans-ui text-[11px] uppercase tracking-[0.25em] text-sand/90 group-hover:text-sand border-b border-sand/40 pb-0.5 transition-colors">
+            Contact on WhatsApp →
+          </span>
+        </a>
+      </div>
     </footer>
   );
 }
