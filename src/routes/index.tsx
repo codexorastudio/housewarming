@@ -678,7 +678,7 @@ function Venue({ onOpenLightbox }: { onOpenLightbox: (index: number) => void }) 
               title="Our New Home"
               subtitle="Housewarming & Lunch · 11:00 AM onwards"
               address="Kothamangalam, Ernakulam, Kerala"
-              maps="https://maps.app.goo.gl/Hay1kzEVJ8hp1fXK9"
+              maps="https://maps.app.goo.gl/Vr5qRjAedRfjogyq8"
             />
           </div>
         </div>
