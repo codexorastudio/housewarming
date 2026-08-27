@@ -328,17 +328,39 @@ function LightboxModal({
 }
 
 function HeroVideo() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const playVideo = () => {
+      video.play().catch((err) => console.log("Hero video autoplay blocked:", err));
+    };
+
+    playVideo();
+
+    window.addEventListener("touchstart", playVideo, { once: true });
+    window.addEventListener("click", playVideo, { once: true });
+
+    return () => {
+      window.removeEventListener("touchstart", playVideo);
+      window.removeEventListener("click", playVideo);
+    };
+  }, []);
+
   return (
     <section className="relative min-h-[100svh] w-full overflow-hidden flex items-center justify-center">
       {/* Background Video */}
       <div className="video-container absolute inset-0 w-full h-full overflow-hidden">
         <video
+          ref={videoRef}
           src="/hero-video.mp4"
           autoPlay
           loop
           muted
           playsInline
-          preload="none"
+          preload="auto"
           className="w-full h-full object-cover"
         />
         <div className="overlay absolute inset-0 bg-black/45 backdrop-brightness-[0.85]" />
