@@ -200,7 +200,6 @@ function CelebrationApp() {
       <CountdownSection />
       <Gallery onOpenLightbox={(idx) => setLightboxIndex(idx)} />
       <Venue onOpenLightbox={() => setLightboxIndex(1)} />
-      <DressCode />
       <Footer />
 
       {/* Lightbox Modal */}
@@ -738,55 +737,7 @@ function VenueCard({
   );
 }
 
-function DressCode() {
-  const items = [
-    {
-      label: "Attire Suggestion",
-      title: "Elegant & Traditional",
-      note: "We encourage gentle pastels, cream, earthy tones, or traditional attire.",
-      icon: (
-        <svg viewBox="0 0 64 64" className="h-14 w-14 text-primary" fill="none" stroke="currentColor" strokeWidth="1.2">
-          <path d="M24 8h16l-4 10 12 38H20l12-38-4-10z" />
-          <path d="M28 22c2 2 6 2 8 0" />
-        </svg>
-      ),
-    },
-    {
-      label: "Warm Note",
-      title: "Family & Friends",
-      note: "Your presence and warm smiles are the greatest gift to Nathania and our home.",
-      icon: (
-        <svg viewBox="0 0 64 64" className="h-14 w-14 text-primary" fill="none" stroke="currentColor" strokeWidth="1.2">
-          <path d="M18 12l14 8 14-8v44H18z" />
-          <path d="M32 20v16" />
-          <circle cx="32" cy="42" r="1.5" fill="currentColor" />
-          <circle cx="32" cy="48" r="1.5" fill="currentColor" />
-        </svg>
-      ),
-    },
-  ];
-  return (
-    <section className="bg-secondary py-24">
-      <div className="mx-auto max-w-4xl px-6 text-center">
-        <Ornament label="A Gentle Note" />
-        <h2 className="font-display text-5xl text-primary sm:text-6xl">Dress Code</h2>
-        <p className="mx-auto mt-4 max-w-lg font-body italic text-foreground/75">
-          Soft, elegant, and festive tones to make our day feel vibrant and warm.
-        </p>
-        <div className="mt-16 grid gap-8 sm:grid-cols-2">
-          {items.map((i) => (
-            <article key={i.label} className="rounded-sm border border-primary/20 bg-ivory p-10 text-primary shadow-[var(--shadow-soft)]">
-              <div className="flex justify-center">{i.icon}</div>
-              <p className="mt-6 font-sans-ui text-xs uppercase tracking-[0.4em] text-primary/80 font-bold">{i.label}</p>
-              <h3 className="mt-2 font-display text-2xl text-primary font-semibold">{i.title}</h3>
-              <p className="mt-3 font-body italic text-foreground/75">{i.note}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+
 
 
 function Footer() {
